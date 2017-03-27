@@ -7,6 +7,8 @@ import com.netflix.hystrix.HystrixCommandKey;
 import com.netflix.hystrix.HystrixCommandProperties;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.TimeUnit;
+
 
 /**
  * Created by dennis on 24/11/2016.
@@ -37,7 +39,7 @@ public class WebCommand<T extends CommandObject> extends HystrixCommand<T>
         long startTime = System.currentTimeMillis();
         try
         {
-            Thread.sleep(5000);
+            TimeUnit.MILLISECONDS.sleep(5000);
         }
         catch (InterruptedException e)
         {
