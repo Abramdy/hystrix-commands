@@ -1,16 +1,14 @@
 # hystrix-commands
 
-The project shows differences between THREAD and SEMAPHORE isolation in Hystrix.
+Simple application showing the differences between THREAD and SEMAPHORE command isolations in Hystrix.
 
-The functionality can be demonstrated using Unit Tests or Dropwizard web application.
+Application provides 2 resourcesL
 
-2 controllers are provided:
+* Single thread execution available via '/api/v1/command/isolation=[isolation]&timeout=[timeout]'
 
--Single thread execution available via /api/v1/command/isolation=[isolation]&timeout=[timeout]
+isolation can be set to thread or semaphore, timeout - positive integer
 
-Where: isolation can be set to thread or semaphore, timeout - positive integer
+* Multi thread execution available via '/api/v1/multi-commands/isolation=[isolation]&timeout=[timeout]&threads=[threads]&interval=[interval]'
 
--Multi thread execution available via /api/v1/multi-commands/isolation=[isolation]&timeout=[timeout]&threads=[threads]&interval=[interval]
-
-Where: threads parameter specifies number of threads attempting to execute the commands simultaneously, and interval specifies the period application waits before spawning new thread.
+threads parameter specifies number of threads attempting to execute the commands simultaneously, and interval specifies the period application waits before spawning new thread.
 
